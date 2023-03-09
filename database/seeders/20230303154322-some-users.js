@@ -7,16 +7,16 @@ module.exports = {
       "users",
       [
         {
-          name: "Leo Messi",
-          email: "leo@messi.com",
+          name: "David Hoens",
+          email: "davidh@messi.com",
           phone: 1234567,
           password: "test",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          name: "Dan Abramov",
-          email: "dan@redux.com",
+          name: "John Abramov",
+          email: "johnabramov@redux.com",
           phone: 1234567,
           password: "test",
           createdAt: new Date(),
