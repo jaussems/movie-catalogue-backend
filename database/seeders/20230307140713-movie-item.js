@@ -40,7 +40,6 @@ module.exports = {
         "poster_path": "/qi9r5xBgcc9KTxlOLjssEbDgO0J.jpg",
         "release_date": "2023-01-12",
         "title": "Plane",
-        list_id: [1],
         "vote_average": 6.9,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -53,7 +52,6 @@ module.exports = {
           10751
         ],
         "id": 315162,
-        list_id: [1, 2],
         "overview": "Puss in Boots discovers that his passion for adventure has taken its toll: He has burned through eight of his nine lives, leaving him with only one life left. Puss sets out on an epic journey to find the mythical Last Wish and restore his nine lives.",
         "poster_path": "/kuf6dutpsT0vSVehic3EZIqkOBt.jpg",
         "release_date": "2022-12-07",
@@ -89,7 +87,6 @@ module.exports = {
         "release_date": "2023-02-15",
         "title": "Ant-Man and the Wasp: Quantumania",
         "vote_average": 6.4,
-        list_id: [1],
         createdAt: new Date(),
         updatedAt: new Date(),
       },

@@ -14,7 +14,8 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       // movie_list.belongsTo(models.user, { foreignKey: 'userId' });
       movie_list.hasMany(models.movie_item);
-      movie_list.belongsToMany(models.user_movie_list_connection, { foreignKey: 'listId' })
+      movie_list.belongsToMany(models.list_item_connection, { foreignKey: 'listId' })
+      movie_list.belongsToMany(models.user)
 
     }
   }

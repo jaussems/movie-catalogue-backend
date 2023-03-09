@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // movie_item.belongsToMany(models.movie_list, { foreignKey: 'listId' })
-      movie_item.belongsTo(models.movie_list, { foreignKey: 'list_item_refrerence_id' });
+      movie_item.belongsTo(models.list_item_connection, { foreignKey: 'movieId' });
 
     }
   }
