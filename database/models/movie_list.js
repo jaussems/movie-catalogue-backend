@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const movie_item = require('./movie_item');
 module.exports = (sequelize, DataTypes) => {
   class movie_list extends Model {
     /**
@@ -11,6 +12,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      // movie_list.belongsTo(models.user, { foreignKey: 'userId' });
+      movie_list.hasMany(models.movie_item);
+      movie_list.belongsToMany(models.user_movie_list_connection, { foreignKey: 'listId' })
+
     }
   }
   movie_list.init({
