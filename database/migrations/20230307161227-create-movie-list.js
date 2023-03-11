@@ -19,6 +19,10 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      listItemConnectionId: {
+        allowNull: true,
+        type: Sequelize.INTEGER
       }
     });
   },

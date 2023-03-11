@@ -2,7 +2,9 @@
 const {
   Model
 } = require('sequelize');
-const movie_item = require('./movie_item');
+
+
+//const movie_item = require("./movie_item");
 module.exports = (sequelize, DataTypes) => {
   class movie_list extends Model {
     /**
@@ -13,10 +15,11 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       // movie_list.belongsTo(models.user, { foreignKey: 'userId' });
-      movie_list.hasMany(models.movie_item);
-      movie_list.belongsToMany(models.list_item_connection, { foreignKey: 'listId' })
-      movie_list.belongsToMany(models.user)
+      movie_list.belongsTo(models.user);
 
+      // movie_list.belongsToMany(models.movie_item, { through: models.list_item_connection, foreignKey: 'listId' })
+      // movie_list.belongsToMany(models.list_item_connection, { foreignKey: 'listId' })
+      movie_list.hasMany(models.movie_item);
     }
   }
   movie_list.init({

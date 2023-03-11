@@ -1,21 +1,14 @@
-const movieItem = require("./database/models").movie_item;
+const User = require("./database/models").user;
 
-
-async function createSampleMovieList() {
+async function getAllUsers() {
     try {
-        const findMovieById = await movieItem.findOne({ where: { id: 599019 } })
-        //console.log(movieItem);
-
-        //const movieItemList = movieItem;
-
-        //const findMovieById = await movieItem.findAll();
-
-        return findMovieById
-
-
+        // This is how we can use a query method to get all the users from the database
+        // Selects all rows. Resolves with a (possibly empty) array
+        const allUsers = await User.findAll({ raw: true });
+        return allUsers;
     } catch (e) {
-        console.error(e);
+        console.log(e);
     }
 }
 
-createSampleMovieList().then(movie => console.log(movie));
+getAllUsers().then(users => console.log(users));

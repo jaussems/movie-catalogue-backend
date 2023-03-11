@@ -10,8 +10,13 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      list_item_connection.belongsToMany(models.movie_item);
-      list_item_connection.belongsToMany(models.movie_list);
+
+      //OLD ONES 
+      // list_item_connection.belongsToMany(models.movie_item);
+      // list_item_connection.belongsToMany(models.movie_list);
+
+      list_item_connection.hasMany(models.movie_item);
+      list_item_connection.hasMany(models.movie_list);
     }
   }
   list_item_connection.init({
