@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   movie_item.init({
     title: DataTypes.STRING,
-    genre_ids: Sequelize.Array(DataTypes.INTEGER),
+    genre_ids: DataTypes.ARRAY(DataTypes.INTEGER),
     overview: DataTypes.TEXT,
     release_date: DataTypes.DATE,
     poster_path: DataTypes.STRING,
