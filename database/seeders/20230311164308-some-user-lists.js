@@ -3,25 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert("movie_lists", [
-      {
-        name: 'Dan\'s List',
-        userId: 1,
-        createdAt: new Date(),
-        updatedAt: new Date(),
-
-      },
-      {
-        name: 'John\'s List',
-        userId: 2,
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      }
-    ])
-
-
-
-    await queryInterface.bulkInsert("list_item_connections", [
+    await queryInterface.bulkInsert("userLists", [
       {
         movieId: 505642,
         listId: 1,
@@ -29,7 +11,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
-        movieId: 505642,
+        movieId: 299536,
         listId: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -46,11 +28,12 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+
+
     ])
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete("movie_lists", null, {});
-    await queryInterface.bulkDelete("list_item_connections", null, {});
+    await queryInterface.bulkDelete("users_lists", null, {});
   }
 };

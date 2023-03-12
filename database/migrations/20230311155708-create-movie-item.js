@@ -2,11 +2,29 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('list_item_connections', {
+    await queryInterface.createTable('movieItems', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
+        type: Sequelize.INTEGER
+      },
+      title: {
+        type: Sequelize.STRING
+      },
+      genre_ids: {
+        type: Sequelize.ARRAY(Sequelize.INTEGER)
+      },
+      overview: {
+        type: Sequelize.TEXT
+      },
+      release_date: {
+        type: Sequelize.DATE
+      },
+      poster_path: {
+        type: Sequelize.STRING
+      },
+      vote_average: {
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -20,6 +38,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('list_item_connections');
+    await queryInterface.dropTable('movieItems');
   }
 };

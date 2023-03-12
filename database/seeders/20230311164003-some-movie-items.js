@@ -3,17 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-    */
-
-    await queryInterface.bulkInsert("movie_items", [
+    await queryInterface.bulkInsert("movieItems", [
       {
         "genre_ids": [
           28,
@@ -331,6 +321,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete("movie_items", null, {});
+    await queryInterface.bulkDelete("movieItems", null, {});
   }
 };
