@@ -3,26 +3,26 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.addColumn("user_lists", "movieId", {
+    await queryInterface.addColumn("userLists", "movieId", {
       type: Sequelize.INTEGER,
       references: {
-        model: "movie_items",
+        model: "movieItems",
         key: "id",
       },
       onUpdate: "CASCADE",
       onDelete: "SET NULL",
     })
 
-    await queryInterface.addColumn("user_lists", "listId", {
+    await queryInterface.addColumn("userLists", "listId", {
       type: Sequelize.INTEGER,
       references: {
-        model: "movie_lists",
+        model: "movieLists",
         key: "id",
       },
       onUpdate: "CASCADE",
       onDelete: "SET NULL",
     })
-    await queryInterface.addColumn("movie_lists", "userId", {
+    await queryInterface.addColumn("movieLists", "userId", {
       type: Sequelize.INTEGER,
       references: {
         model: "users",
@@ -34,9 +34,9 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.removeColumn("user_lists", "movieId")
-    await queryInterface.removeColumn("user_lists", "listId")
-    await queryInterface.removeColumn("movie_lists", "userId")
+    await queryInterface.removeColumn("userLists", "movieId")
+    await queryInterface.removeColumn("userLists", "listId")
+    await queryInterface.removeColumn("movieLists", "userId")
 
   }
 }

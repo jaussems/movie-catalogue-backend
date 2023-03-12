@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser')
 
 const User = require("./database/models").user;
-const Movie_Item = require("./database/models").movie_item;
+const movieItem = require("./database/models").movieItem;
 const app = express();
 const PORT = 4000;
 
@@ -13,8 +13,13 @@ app.get("/users", async (req, res) => {
     res.send(users);
 })
 
+app.get("/movieItems", async (req, res) => {
+    const movieItems = await movieItem.findAll();
+    res.send(movieItems);
+})
+
 app.get("movies", async (req, res) => {
-    const movies = await Movie_Item.findAll();
+    const movies = await movieItem.findAll();
     res.send(movies);
 })
 

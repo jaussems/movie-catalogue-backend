@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert("user_lists", [
+    await queryInterface.bulkInsert("userLists", [
       {
         movieId: 505642,
         listId: 1,
