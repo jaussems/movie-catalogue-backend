@@ -1,12 +1,20 @@
-const { user, movieList, movieItem } = require("./database/models");
+const { user, movieList, movieItem, userList } = require("./database/models");
 
 async function listsWithUsers() {
     const lists = await movieList.findAll({
+        where: { userId: 2 },
         raw: true,
         include: [movieItem],
     });
 
-    console.log(lists)
+    const User = await user.findOne(
+        {
+            where: { id: 2 },
+            raw: true
+        }
+    )
+
+    console.log(lists, `USER: `, User)
 }
 
 listsWithUsers()

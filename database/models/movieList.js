@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       movieList.belongsToMany(models.movieItem, { through: models.userList, foreignKey: 'listId' });
+      movieList.belongsTo(models.user);
     }
   }
   movieList.init({
