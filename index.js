@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const User = require("./database/models").user;
 const movieItem = require("./database/models").movieItem;
 const app = express();
-const PORT = 4000;
+const PORT = 5333;
 
 app.use(bodyParser.json());
 
@@ -23,6 +23,13 @@ app.get("movies", async (req, res) => {
     res.send(movies);
 })
 
+
+app.post("/", (req, res) => {
+    console.log(req.body);
+    res.json({
+        message: "We received your request body!",
+    });
+});
 
 app.listen(PORT, () => {
     console.log(`listening on Port ${PORT}`)
