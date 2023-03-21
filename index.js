@@ -1,10 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser')
-
 const User = require("./database/models").user;
 const movieItem = require("./database/models").movieItem;
+const authRouther = require('./router/authRouter');
+const testRouter = require('./router/testRouter');
 const app = express();
-const PORT = 5333;
+
+const PORT = 4000;
+
+app.use(testRouter);
+
+app.use(authRouther);
+
 
 app.use(bodyParser.json());
 
@@ -30,6 +37,9 @@ app.post("/", (req, res) => {
         message: "We received your request body!",
     });
 });
+
+
+
 
 app.listen(PORT, () => {
     console.log(`listening on Port ${PORT}`)
