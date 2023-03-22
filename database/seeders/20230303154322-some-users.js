@@ -10,7 +10,7 @@ module.exports = {
       "users",
       [
         {
-          name: "David Hoens",
+          fullName: "David Hoens",
           email: "davidh@messi.com",
           phone: 1234567,
           password: bcrypt.hashSync("test", SALT_ROUNDS),
@@ -18,7 +18,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          name: "John Abramov",
+          fullName: "John Abramov",
           email: "johnabramov@redux.com",
           phone: 1234567,
           password: bcrypt.hashSync("test", SALT_ROUNDS),

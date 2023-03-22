@@ -1,18 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser')
 const User = require("./database/models").user;
-const movieItem = require("./database/models").movieItem;
-const authRouther = require('./router/authRouter');
-const testRouter = require('./router/testRouter');
+const accountRouter = require('./router/accountRouter');
 const movieRouter = require('./router/movieRouter');
-const authMiddleware = require('./middleware/auth');
 const app = express();
 
 const PORT = 4000;
 app.use(bodyParser.json());
-app.use(testRouter);
 
-app.use("/auth", authRouther);
+
+app.use("/auth", accountRouter);
 
 app.use("/", movieRouter);
 

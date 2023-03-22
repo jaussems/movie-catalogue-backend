@@ -1,7 +1,7 @@
 const express = require("express");
 const { user } = require("../database/models");
 const bodyParser = require('body-parser');
-const { toJWT, toData } = require('../auth/jwt');
+const { toJWT } = require('../auth/jwt');
 const { Router } = express;
 const bcrypt = require('bcrypt');
 const router = new Router();
@@ -21,9 +21,7 @@ router.post('/login', async (req, res) => {
             message: "User with that email does not exist",
         });
     }
-    // 2. use bcrypt.compareSync to check the password against the stored hash
 
-    // bcrypt.compareSync(password, user.password)
     else if (bcrypt.compareSync(password, userFound.password)) {
         // 3. if the password is correct, return a JWT with the userId of the user (user.id)
         const jwt = toJWT({ userId: userFound.id });
