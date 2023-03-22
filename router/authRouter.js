@@ -27,6 +27,7 @@ router.post('/login', async (req, res) => {
     else if (bcrypt.compareSync(password, userFound.password)) {
         // 3. if the password is correct, return a JWT with the userId of the user (user.id)
         const jwt = toJWT({ userId: userFound.id });
+        console.log(req.headers)
         res.send({
             jwt,
         });
