@@ -8,7 +8,6 @@ const router = new Router();
 router.use(bodyParser.json());
 
 router.post('/login', async (req, res) => {
-    // 1. find user based on email address
     const { email, password } = req.body;
 
     const userFound = await user.findOne({
@@ -23,9 +22,7 @@ router.post('/login', async (req, res) => {
     }
 
     else if (bcrypt.compareSync(password, userFound.password)) {
-        // 3. if the password is correct, return a JWT with the userId of the user (user.id)
         const jwt = toJWT({ userId: userFound.id });
-        console.log(req.headers)
         res.send({
             jwt,
         });
