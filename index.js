@@ -10,7 +10,7 @@ const PORT = 4000;
 
 app.use(testRouter);
 
-app.use(authRouther);
+app.use("/auth", authRouther);
 
 
 app.use(bodyParser.json());
