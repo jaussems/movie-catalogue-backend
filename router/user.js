@@ -1,5 +1,6 @@
 const express = require('express');
-const { user: User } = require('../database/models/user');
+const { user: User } = require('../database/models');
+const bcrypt = require('bcrypt');
 
 const { Router } = require('express');
 
@@ -21,3 +22,5 @@ router.post('/user', async (req, res, next) => {
         res.json(newUser);
     }
 })
+
+module.exports = router;

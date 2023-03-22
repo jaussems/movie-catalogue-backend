@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const User = require("./database/models").user;
 const accountRouter = require('./router/accountRouter');
+const userRouter = require('./router/user');
 const movieRouter = require('./router/movieRouter');
 const app = express();
 
@@ -12,6 +13,8 @@ app.use(bodyParser.json());
 app.use("/auth", accountRouter);
 
 app.use("/", movieRouter);
+
+app.use("/", userRouter);
 
 
 
